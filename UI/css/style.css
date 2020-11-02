@@ -1,0 +1,429 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+/*.....................................nav bar..............................*/
+ nav{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     min-height: 8vh;
+     background-color: #2F4F4F;
+     font-family:'poppins' ,sans-serif;
+     padding-top: opx;
+    
+ }
+ .logo a{
+     color:rgb(233, 224, 224);
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     font-size: 18px;
+     text-decoration: none;
+
+ }
+
+ .logo a:hover{
+    
+    color: darkorange;
+}
+
+ .nav-links{
+     display:flex;
+     justify-content: space-around;
+     width:60%;
+     
+ }
+ .nav-links li{
+     list-style: none;
+ }
+ .nav-links a{
+    color:#c9c4c4;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight:bold; 
+ }
+.fixed-nav-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 9999;
+    width:100%
+}
+
+ .burger div{
+     width:25px;
+     height:3px;
+     margin:5px;
+     background-color:rgb(233, 224, 224);
+     transition: all 0.7s ease;
+ }
+ 
+ .burger{
+     display:none;
+     cursor: pointer;
+ }
+ @media screen and (max-width:1120px){
+     .nav-links{
+         width:60%;
+     }
+}
+@media screen and (max-width:836px){
+    .nav-links{
+        width:80%;
+    }
+}
+ @media screen and (max-width:700px){
+    body{
+        overflow-x: hidden;
+    }
+
+     .nav-links{
+        position:absolute;
+        background-color:#2F4F4F;
+        right:0px;
+        height:92vh;
+        top:8vh;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:45%;
+        transform:translateX(100%);
+        transition:transform 0.5s ease-in;
+     }
+     .nav-links li{
+        opacity:0px;
+    }
+    .burger{
+        display:block;
+    }
+
+} 
+      .nav-active{
+      transform:translateX(0%);
+    }
+@keyframes navLinkFade{
+    from{
+     opacity: 0;
+     transform: translateX(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0%);
+    }
+}
+.toggle .line1{
+transform:rotate(-45deg)  translate(-12px,10px);
+}
+.toggle .line2{
+  opacity:0;  
+}
+.toggle .line3{
+    transform: rotate(45deg);  
+}
+
+.nav-links a:hover{
+    
+    color: darkorange;
+}
+*{
+    margin:0;
+    padding:0;
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+#banner{
+    background-image: url("../assets/apple-lineup.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 50px;
+}
+#logo-container{
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.imagex{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+
+}
+.banner-text{
+    display: flex;
+    flex-direction: column;
+    height:500px;
+    justify-content: center;
+    color: dimgray;
+    left:0;
+    text-align: left;
+}
+
+.banner-text h3{
+    font-size: 48px;
+    color: rgb(44, 42, 42);
+
+}
+
+.banner-text h6{
+    font-size: 24px;
+    color: rgb(14, 13, 13);
+    text-align: right;
+}
+
+.banner-text h4::before{
+    content:'';
+    background-color: white;
+    height:2px;
+    width: 30px;
+    display: inline-block;
+    margin-right:10px;
+}
+
+.banner-btns{
+    padding:40px 5px;
+  
+    margin-left: auto;
+}
+
+.banner-btns button{
+    padding: 10px 17px;
+    border-radius: 40px;
+    outline: none;
+    cursor: pointer;
+  
+}
+.get-in-touch{
+    background-color: #2F4F4F;
+    color:rgb(219, 218, 218);
+    margin-left: 50px;
+   
+    
+}
+/*------------------------About me---------------------------*/
+#about{
+    background-color: #D9D3D3;
+    padding: 20px 100px 40px;   
+    text-align: center;
+    border-bottom: 3px solid white;
+    animation-name: comeUp;
+    animation-duration: 2s;
+
+}
+@keyframes comeUp{
+    from{margin-top: 5rem;}
+    to{margin-top: 0rem;}
+}
+
+
+.section-title{
+    font-size: 45px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.cards-area{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.card{
+    display:flex;
+    flex-basis: 300px;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 80px 15px 20px;
+    margin-bottom: 35px;
+    margin-left: 20px;
+}
+
+.card-image{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.card-image img{
+    display: inline-block;
+    height: 100px;
+}
+
+.card-title, .card-text{
+     text-align: center;
+}
+.card-title{
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom:20px;
+
+}
+
+.card-text{
+    font-size: 18px;
+    height: 150px;
+
+}
+
+.card-btn{
+    width: 100%;
+    text-align: center;
+
+
+}
+
+.card-btn button{
+    background-color: #2F4F4F;
+    padding:5px 10px;
+    border-radius: 25px;
+    color: rgb(196, 186, 186);
+}
+.card-btn button{
+    margin: 20px auto;
+
+}
+/*............................end of about me.............................*/
+/*-------------------------SLILLS SECTION-----------------------------------------*/
+#skills{
+
+    background-color: #D9D3D3;
+    padding: 20px 100px 40px;
+    color:black;
+    text-align: center;
+
+}
+
+#skills .cards-area{
+    color: black;
+}
+
+#skills .card{
+    background-color: white;
+    flex-basis: 300px;
+}
+/*---------------------PREFOOTER--------------------------------------------------*/
+
+#pre-footer{
+    background-color: #852887;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+
+.footer-nav ul li, .social-media ul li{
+    list-style: none;
+    display: inline-block;
+    padding:3px 8px;
+    color: white;
+}
+
+.footer-nav ul li a{
+    color:inherit;
+    text-decoration: none;
+}
+
+.social-media .fa{
+    font-size: 20px;
+    color: white;
+}
+
+/*--------------------------------------------------------------------------------*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 900px) {
+    #about, #skills, #pre-footer{
+        padding:20px;
+    }
+
+    #pre-footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-media{
+        margin-top: 10px;
+    }
+    .card{
+        margin:20px;
+    }
+
+}
+.banner-text{
+    height: 50px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+#footer{
+    background-color: #2F4F4F;
+    border: 10px solid #ff00;
+    min-height: 250px;
+    flex: 1 0 auto;
+    text-align: center;
+}
+
+.footericons li{
+    list-style: none;
+    
+}
+
+.footericons{
+display:flex;
+flex-direction: row;
+color: rgb(233, 230, 230); 
+padding: 0rem;
+margin-left: 45%;;
+
+}
+.footericons .description{
+    float:right;
+}
+.footer{
+    padding-left: 90px;
+    background: #2F4F4F;
+    padding-top: 40px;
+    padding-bottom: 60px;
+
+}
+.footercontainer{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-left: 37.5%;
+}
+.footercontainer .socialicons img{
+    width: 40px;
+    height: 40px;
+}
+.footercontainer .socialicons p{
+    margin-top: 10%;
+    color: #c9c4c4;
+}
+.footercontainer .location h4{
+    color: #c9c4c4;
+}
