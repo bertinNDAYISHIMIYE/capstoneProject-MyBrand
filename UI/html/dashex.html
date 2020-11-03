@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" typetype="text/css" href="dashex.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+  </head>
+  <body>
+   <section id="nav-container">
+        <nav id="navigation" class="nav">
+            <div class="logo">
+                <h3><a href="index.html">Berry</a></h3>
+            </div>
+            <div class="menu" id="menu">
+                <ul> 
+                    <li class="burger-icon" onclick="dropNav()"><i class="fa fa-bars"></i></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blogpage">Blogs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="dashex.html">Dashboard</a></li>
+                    <li><a href="createblogs.html">Create blog</a></li>
+                    <li><a href="editblog.html">Edit blog</a></li>
+
+
+                </ul>
+                <div class="user-avatar"><img src="256-512.webp" onclick="dropNav()"></div>
+            </div>
+
+        </nav>
+   </section>
+   <section id="main">
+        <div class="left-pane" id="left">
+            <li class="burger" onclick="closeSideNav()"><i class="fa fa-bars"></i></li>
+            <div class="menu-item active" onclick="display_item(0)">
+                <img src="../assets/dash.jpg" alt="">
+                <div class="menu-caption">Dashboard</div>
+
+            </div>
+
+            <div class="menu-item" onclick="display_item(1)">
+                <img src="../assets/download.jpeg" alt="">
+                <div class="menu-caption">Users</div>
+
+            </div>
+
+            <div class="menu-item" onclick="display_item(2)">
+                <img src="../assets/meassage.png" alt="">
+                <div class="menu-caption">Messages</div>
+
+            </div>
+
+            <div class="menu-item" onclick="display_item(3)">
+                <img src="../assets/blog.png" alt="">
+                <div class="menu-caption">Blogs</div>
+
+            </div>
+
+            <div class="menu-item" onclick="display_item(4)">
+                <img src="../assets/settings.png" alt="">
+                <div class="menu-caption">Settings</div>
+
+            </div>
+
+        </div>
+        <div class="right-pane">
+            <div class="pane-item">
+                <li class="burger" onclick="dropSideNav()"><i class="fa fa-bars"></i></li>
+                <div class="pane-item-title">
+                    Dashboard
+                </div>
+                <div class="pane-item-content">
+                    <div class="card active" onclick="display_item(0)">
+                        <div class="card-image">
+                            <img src="../assets/dash.jpg" alt="">
+                        </div>
+                        <div class="card-text">
+                            dashboard
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="display_item(1)">
+                        <div class="card-image">
+                            <img src="../assets/download.jpeg" alt="">
+                        </div>
+                        <div class="card-text">
+                           users
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="display_item(3)">
+                        <div class="card-image">
+                            <img src="../assets/blog.png" alt="">
+                        </div>
+                        <div class="card-text">
+                            Blogs
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="display_item(2)">
+                        <div class="card-image">
+                            <img src="../assets/meassage.png" alt="">
+                        </div>
+                        <div class="card-text">
+                            Messages
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="display_item(4)">
+                        <div class="card-image">
+                            <img src="../assets/settings.png" alt="">
+                        </div>
+                        <div class="card-text">
+                            Settings
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pane-item">
+                <li class="burger" onclick="dropSideNav()"><i class="fa fa-bars"></i></li>
+                <div class="pane-item-title">
+                    Users
+                </div>
+                <div class="pane-item-content">
+                    <table>
+                        <tr>
+                            <th>User_Id</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Date_Of_Birth</th>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="pane-item">
+                <li class="burger" onclick="dropSideNav()"><i class="fa fa-bars"></i></li>
+                <div class="pane-item-title">
+                    Message
+                </div>
+                <div class="pane-item-content">
+                    <table>
+                        <tr>
+                            <th>Message_Id</th>
+                            <th>Message</th>
+                            <th>Sender</th>
+                            <th>Date</th>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="pane-item">
+                <li class="burger" onclick="dropSideNav()"><i class="fa fa-bars"></i></li>
+                <div class="pane-item-title">
+                    Blogs
+                </div>
+                <div class="pane-item-content">
+                    <table>
+                        <tr>
+                            <th>Blogs_Id</th>
+                            <th>Title</th>
+                            <th>Blog_Writter</th>
+                            <th>Date</th>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="pane-item">
+                <li class="burger" onclick="dropSideNav()"><i class="fa fa-bars"></i></li>
+                <div class="pane-item-title">
+                    Settings
+                </div>
+                <div class="pane-item-content" style="overflow-x: auto;">
+                    <table>
+                        <tr>
+                            <th>Blogs_Id</th>
+                            <th>Title</th>
+                            <th>Blog_Writter</th>
+                            <th>Date</th>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Berry</td>
+                            <td>mypass123</td>
+                            <td>06/20/2002</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+   </section>
+
+<footer></footer>
+   <script src="../js/dashboard.js"></script>
+  </body>
+  </html>  
