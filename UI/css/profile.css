@@ -147,7 +147,7 @@ transform:rotate(-45deg)  translate(-12px,10px);
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 600px;
+    width: 900px;
     display: flex;
     box-shadow: 0px 1px 20px 0px rgba(69,90,100,0.8);
 
@@ -157,33 +157,49 @@ transform:rotate(-45deg)  translate(-12px,10px);
     background: #fefefe;
     padding: 30px 25px;
     text-align: center;
+    align-items: center;
     
 }
-.profile-pic{
+/* .profile-pic{
     background-image: url("../assets/bertinn.jpg");
 }
 
 .profile-pic span{
     margin-top: 40px;
     text-decoration: none;
-}
-  
+    align-items: center;
+    
+} */
+ a{
+     text-decoration: none;
+ }
+
   a:hover {
     text-decoration: none;
   }
   
   .profile-pic {
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
     color: transparent;
     transition: all .3s ease;
+    margin-left: 45px  !important;
+   margin-top: 30px;
+   margin-bottom: 30px;
+    
     
   }
-    .profile-pic:hover {
+
+  form{
+      align-items: center;
+      margin-left: 40px;
+      margin-top: 90px;
+  }
+    /* .profile-pic:hover {
       background-color: rgba(0,0,0,.5);
       z-index: 10000;
       color: rgba(250,250,250,1);
@@ -193,15 +209,15 @@ transform:rotate(-45deg)  translate(-12px,10px);
     span {
       display: inline-flex;
       padding: .2em;
-    }
+    } */
   
-.wrapper .left .input-file{
+/* .wrapper .left .input-file{
     size: 5px;
-}
+} */
 .wrapper .left img{
     margin-bottom: 10px;
-    border-radius: 5px;
-    height: 60%;
+    border-radius: 50%;
+    height: 90%;
     width: 90%;
 
 }
@@ -220,6 +236,7 @@ transform:rotate(-45deg)  translate(-12px,10px);
 .wrapper .right .info,
 .wrapper .right .projects{
     margin-bottom: 25 px;
+    margin-top: 30px;
 
 }
 .wrapper .right .info h3,
@@ -230,6 +247,7 @@ transform:rotate(-45deg)  translate(-12px,10px);
     color: #353c4e ;
     text-transform: uppercase;
     letter-spacing: 5px;
+    margin-top: 80px;
 
 }
 .wrapper .right .infoData,
@@ -252,14 +270,17 @@ transform:rotate(-45deg)  translate(-12px,10px);
 }
 .wrapper .social ul{
     display: flex;
+    margin-left: 100px
 
 }
 .wrapper .social ul li{
     width: 45px;
     height: 45px;
     margin-right: 10px;
+    margin-left: 10px;
     line-height: 45px;
     text-align: center;
+    margin-top: 70px;
 
 }
 .wrapper .social ul li a{
@@ -273,22 +294,83 @@ transform:rotate(-45deg)  translate(-12px,10px);
     margin-right: 20px;
 }
 
+@media only screen and (max-width: 384px){
 
-    @media screen and (max-width: 925px){
+    .wrapper{
+        position: relative;
+        height: auto;
+        width: 100% !important;
+        margin: 10px auto !important;
+    }
+    .wrapper .right{
+        height: auto;
+       
+    }
+    form{
+        margin-left: 10px;
+    }
+
+    
+}
+
+@media only screen and (max-width:435px){
+    .wrapper{
+        height: auto;
+        margin-top: 10px;
+    }
+} 
+
+
+
+@media only screen and (max-width:768px){
+   .wrapper {
+       height: auto;
+       margin-top: 10px;
+       width: 100%;
+   }
+   .wrapper .right .info,
+.wrapper .right .projects{
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+   .wrapper .right .info h3,
+   .wrapper .right .projects h3{
+       
+       margin-top: 10px;
+   
+   }
+   .wrapper .social ul li{
+margin-left: 0;
+    margin-top: 30px;
+
+}
+
+
+}
+
+    @media only screen and (max-width: 925px){
     
     .wrapper {
-        display: block;
-        width: 300px;
-        padding-top: 10px;
-        margin-top: 80px;
+        display: flex;
+        /* padding-top: 10px; */
+        margin-top: 20px;
         margin-bottom: 60px;
+        flex-flow: column;
+        width: 78%;
+        top:500px;
+
+    }
+    .wrapper .left .profile-pic{
+        margin: auto !important;
     }
 
     .wrapper .left {
-        width: 300px;
+        width: 100%;
+        
     }
     .wrapper .right {
-        width: 40%;
+        width: 70%;
     }
     .wrapper .right .infoData, .wrapper .right .projectsData {
         display: block;
