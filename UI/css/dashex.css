@@ -225,6 +225,27 @@ td, th{
 
 }
 
+ .one{
+    background-color:rgb(240, 236, 236) ;
+    border-radius: 5px;
+    margin-right: 20px;
+    
+
+}
+.one a{
+    color: rgb(5, 146, 5) ;
+    text-decoration: none;
+    
+}
+.two{
+    background-color: rgb(236, 234, 234);
+    border-radius: 5px;
+} 
+.two a{
+    color: rgb(194, 3, 3);
+    text-decoration: none;
+}
+
 li.burger{
     list-style: none;
     display: none;
@@ -295,4 +316,15 @@ footer{
 }
 @media only screen and (max-width:350px) {
 
+}
+
+
+
+.delete a{
+    text-decoration: none;
+    color:red;
+}
+.edit a{
+    text-decoration: none;
+    color: greenyellow;
 }
