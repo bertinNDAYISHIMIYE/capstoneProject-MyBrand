@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" typetype="text/css" href="../css/registerpage.css">
+   
+    <title>Sign Up</title>
+  </head>
+  <body>
+      <section>
+<section>
+    <nav class="fixed-nav-bar">
+        <div class="logo">
+            <h3><a href="index.html">Berry</a></h3>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="blogpage.html">Blog</a></li>
+            
+            <li><a href="dashex.html">Dashboard</a></li>
+            <li><a href="contactpage.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    </section>
+
+   <section id="form-container">
+       <div class="form">
+           <div class="form-left">
+                <div class="overlay">
+
+                </div>
+           </div>
+           <div class="form-right">
+               <div class="form-title">
+                   Sign Up
+               </div>
+               <form action="submit" onsubmit="event.preventDefault();"  id="sign" >
+                <label for="email" class="label">Names : </label><br/>
+                    <input type="text" name="names" id="names"><br/>
+
+
+                    <label for="email" class="label">Email : </label><br/>
+                    <input type="email" name="email" id="email"><br/>
+
+                    <label for="password" class="label" >Password : </label><br/>
+                    <input type="password" name="password" id="pass"><br/>
+                    <label for="password" class="label" >Confirm password : </label><br/>
+                    <input type="password" name="password" id="passv"><br/>
+                     <button class="submit-button" type="submit" id="btn">Sign Up</button>
+                     <div id="error_message">
+                     </div>
+               </form>
+
+           </div>
+       </div>
+   </section>
+  </section>
+  
+   <script src="../js/landing.js"></script>
+  
+
+  </body>
+</html> 
