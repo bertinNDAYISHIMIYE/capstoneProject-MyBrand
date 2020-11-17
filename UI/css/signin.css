@@ -226,6 +226,10 @@ a{
     color: #c9c4c4;
     text-decoration: none;
 }
+.reg a{
+    color: #2F4F4F;
+    text-decoration: none;
+}
 
 #footer{
     position: absolute;
