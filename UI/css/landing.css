@@ -9,7 +9,7 @@
      display: flex;
      justify-content: space-around;
      align-items: center;
-     min-height: 8vh;
+     min-height: 60px;
      background-color: #2F4F4F;
      font-family:'poppins' ,sans-serif;
      padding-top: opx;
@@ -21,13 +21,17 @@
      letter-spacing: 1px;
      font-size: 18px;
      text-decoration: none;
+  
 
  }
+
 
  .logo a:hover{
     
     color: darkorange;
 }
+
+
 
  .nav-links{
      display:flex;
@@ -60,6 +64,8 @@
      transition: all 0.7s ease;
  }
  
+
+
  .burger{
      display:none;
      cursor: pointer;
@@ -74,7 +80,7 @@
         width:80%;
     }
 }
- @media screen and (max-width:700px){
+@media screen and (max-width:700px){
     body{
         overflow-x: hidden;
     }
@@ -98,6 +104,8 @@
     .burger{
         display:block;
     }
+
+
 
 } 
       .nav-active{
@@ -123,14 +131,15 @@ transform:rotate(-45deg)  translate(-12px,10px);
     transform: rotate(45deg);  
 }
 
+
 .nav-links a:hover{
     
     color: darkorange;
 }
-*{
-    margin:0;
-    padding:0;
-}
+/*.......................................end nav bar....................................*/
+
+
+/*.................................landing page...................................*/
 
 a{
     color:inherit;
@@ -138,78 +147,66 @@ a{
 }
 
 #banner{
-    background-image: url("../assets/apple-lineup.jpg");
+    background-image: url("../assets/Portfolio\ Background.webp");
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 20px 50px;
+    height:600px;
 }
 #logo-container{
-
-    width: 20px;
-    height: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     border-radius: 50%;
 }
-.imagex{
+ .imagex{
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    margin-top: 100px;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
 
 }
 .banner-text{
     display: flex;
+    width: 100%;
     flex-direction: column;
-    height:500px;
     justify-content: center;
-    color: dimgray;
+    align-items: center;
+}
+.bannertext{
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    margin-top: 1px;
+    justify-content: center;
+    color: rgb(231, 227, 227);
     left:0;
     text-align: left;
+    align-items: center;
 }
 
-.banner-text h3{
-    font-size: 48px;
-    color: rgb(44, 42, 42);
+.bannertext h3{
+    font-size: 40px ;
+    color:  rgb(231, 227, 227);
+  margin-bottom: 15px;
+    text-align: center;
 
 }
 
-.banner-text h6{
+.bannertext h6{
     font-size: 24px;
-    color: rgb(14, 13, 13);
-    text-align: right;
-}
-
-.banner-text h4::before{
-    content:'';
-    background-color: white;
-    height:2px;
-    width: 30px;
-    display: inline-block;
-    margin-right:10px;
-}
-
-.banner-btns{
-    padding:40px 5px;
-  
-    margin-left: auto;
-}
-
-.banner-btns button{
-    padding: 10px 17px;
-    border-radius: 40px;
-    outline: none;
-    cursor: pointer;
-  
-}
-.get-in-touch{
-    background-color: #2F4F4F;
-    color:rgb(219, 218, 218);
-    margin-left: 50px;
-   
+    color:  rgb(231, 227, 227);
+    text-align: center;
     
 }
+
+
+
+
+
 /*------------------------About me---------------------------*/
+
 #about{
     background-color: #D9D3D3;
     padding: 20px 100px 40px;   
@@ -230,6 +227,9 @@ a{
     font-weight: 900;
     text-transform: uppercase;
 }
+
+
+
 .cards-area{
     display:flex;
     justify-content: center;
@@ -237,6 +237,8 @@ a{
     align-self: center;
     margin-top: 60px;
     flex-wrap: wrap;
+
+
 }
 
 .card{
@@ -287,16 +289,19 @@ a{
 .card-btn button{
     background-color: #2F4F4F;
     padding:5px 10px;
-    border-radius: 25px;
+    border-radius: 5px;
     color: rgb(196, 186, 186);
 }
 .card-btn button{
     margin: 20px auto;
 
 }
+
 /*............................end of about me.............................*/
-/*-------------------------SLILLS SECTION-----------------------------------------*/
-#skills{
+
+
+
+#projects{
 
     background-color: #D9D3D3;
     padding: 20px 100px 40px;
@@ -305,81 +310,15 @@ a{
 
 }
 
-#skills .cards-area{
+#projects .cards-area{
     color: black;
 }
 
-#skills .card{
+#projects .card{
     background-color: white;
     flex-basis: 300px;
 }
-/*---------------------PREFOOTER--------------------------------------------------*/
 
-#pre-footer{
-    background-color: #852887;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 100px;
-}
-
-.footer-nav ul li, .social-media ul li{
-    list-style: none;
-    display: inline-block;
-    padding:3px 8px;
-    color: white;
-}
-
-.footer-nav ul li a{
-    color:inherit;
-    text-decoration: none;
-}
-
-.social-media .fa{
-    font-size: 20px;
-    color: white;
-}
-
-/*--------------------------------------------------------------------------------*/
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 900px) {
-    #about, #skills, #pre-footer{
-        padding:20px;
-    }
-
-    #pre-footer{
-        flex-direction: column;
-        align-items: center;
-    }
-    .social-media{
-        margin-top: 10px;
-    }
-    .card{
-        margin:20px;
-    }
-
-}
-.banner-text{
-    height: 50px;
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
-}
 #footer{
     background-color: #2F4F4F;
     border: 10px solid #ff00;
@@ -404,6 +343,7 @@ margin-left: 45%;;
 .footericons .description{
     float:right;
 }
+
 .footer{
     padding-left: 90px;
     background: #2F4F4F;
@@ -426,4 +366,237 @@ margin-left: 45%;;
 }
 .footercontainer .location h4{
     color: #c9c4c4;
+}
+
+
+@media only screen and (max-width: 424px) {
+    *{
+        padding:0px;
+        margin:0px;
+        box-sizing: border-box;
+        font-family: Montserrat;
+    }
+    body{
+        padding-right: 0rem;
+        margin-right: 0;
+    }
+   
+
+    
+
+    #banner{
+        background-image: url("../assets/Portfolio\ Background.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0px 0px 0px 0px;
+    }
+
+    .footericons{
+        display:flex;
+        flex-direction: row;
+        color: rgb(233, 230, 230); 
+        padding: 0rem;
+        margin-left: 0;
+        
+        }
+	.footercontainer{
+		display: flex;
+		flex-direction: row;
+		padding: 20px 20px;
+		margin: 0;
+    }
+    
+	.footer{
+	padding: 0;
+
+    }
+    .bannertext h3{
+        font-size: 32px !important;
+    }
+    .bannertext h6{
+        font-size: 18px !important;
+    }
+
+	.footercontainer .location{
+		margin-left: 10px;
+        }
+}    
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (max-width: 650px) {
+           
+    }
+        
+        
+        
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 668px) {
+
+    *{
+        padding:0px;
+        margin:0px;
+        box-sizing: border-box;
+        font-family: Montserrat;
+}
+body{
+        padding-right: 0rem;
+        margin-right: 0;
+    }
+   
+
+    
+
+#banner{
+        background-image: url("../assets/Portfolio\ Background.webp");
+        background-size: cover;
+        background-repeat: no-repeat;                   
+        padding: 0px 0px 0px 0px;
+    }
+.imagex{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: 80px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+}
+.footer{
+    padding: 0;
+
+    }
+
+    .footercontainer .location{
+        margin-left: 10px;
+    }
+
+.bannertext{
+    padding-top: 10px;
+    margin-top: 30px;
+    /* justify-content: center; */
+    color: rgb(231, 227, 227);
+    left:0;
+    /* text-align: center; */
+}
+
+.bannertext h3{
+    color:  rgb(231, 227, 227);
+
+}
+
+.bannertext h6{
+    font-size: 24px;
+    color:  rgb(231, 227, 227);
+    text-align: center;
+    
+}
+
+
+}
+
+@media only screen and (max-width: 900px) {
+    .bannertext{
+        padding-top: 20px;
+        font-size: 10px;
+        padding-right: 40px;
+        margin-left: 10px;
+    }
+    .bannertext h3{
+       text-align: center;
+    } 
+
+    #about, #projects, #pre-footer{
+        padding:20px;
+    }
+
+
+    .card{
+        margin:20px;
+    }
+
+    #banner{
+        background-image: url("../assets/Portfolio\ Background.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0px 0px 0px 0px;
+    }
+
+    .footericons{
+        display:flex;
+        flex-direction: row;
+        color: rgb(233, 230, 230); 
+        padding: 0rem;
+        margin-left: 20%;
+        
+        }
+
+        .footer{
+            display: flex;
+            justify-content: center;
+            
+        }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+*{
+        padding:0px;
+        margin:0px;
+        box-sizing: border-box;
+        font-family: Montserrat;
+}
+body{
+        padding-right: 0rem;
+        margin-right: 0;
+    }
+   
+
+    
+
+#banner{
+        background-image: url("../assets/Portfolio\ Background.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0px 0px 0px 0px;
+    }
+
+.footer{
+	padding: 0;
+
+	}
+
+	.footercontainer .location{
+		margin-left: 10px;
+	}
+
+
+.bannertext{
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    margin-top: 50px;
+    justify-content: center;
+    color: rgb(231, 227, 227);
+    left:0;
+    text-align: left;
+}
+
+.bannertext h3{
+    font-size: 40px;
+    color:  rgb(231, 227, 227);
+   
+
+}
+
+.bannertext h6{
+    font-size: 24px;
+    color:  rgb(231, 227, 227);
+    text-align: center;
+   
+}
+
+}
+@media only screen and (max-width: 1024px){
+
+
 }
