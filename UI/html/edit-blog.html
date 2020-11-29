@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" typetype="text/css" href="../CSS/createblogs.css">
+   
+    <title>Update blog</title>
+  </head>
+  <body>
+    <nav class="fixed-nav-bar">
+        <div class="logo">
+            <h3><a href="index.html">Berry</a></h3>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="blogpage.html">Blog</a></li>
+            
+            <li><a href="dashex.html">Dashboard</a></li>
+            <li><a href="contactpage.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+   <section id="form-container">
+    <div class="form">
+       
+        <form action="#" name="create-blog-form" class="form-controls" id='blogform'>
+            <div class="form-title">
+                Update blog
+            </div>
+
+            <label for="title">Title</label><br>
+            <input type="text" name="title" value="" id="title" class="title"><br>
+            <label for="title">Editor</label><br>
+            <input type="text" name="title" value="" id="writer" class="title"><br>
+
+            <label for="description">Description</label><br>
+            <textarea name="description" id="description" cols="100" rows="10"> </textarea><br>
+
+            <label for="blog_picture"></label><br>
+            <input type="file" name="blog_picture" id="file-input" class="file-input"><br>
+
+            <div class="button-left"><button class="create-button" id="update-btn">Update</button></div>
+
+
+        </form>
+
+    </div>
+   </section>
+
+   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+
+  <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBLzeLvvwp6JPiC22FT-afIvtsBv4p_aXw",
+        authDomain: "mybrand-9c5a8.firebaseapp.com",
+        databaseURL: "https://mybrand-9c5a8.firebaseio.com",
+        projectId: "mybrand-9c5a8",
+        storageBucket: "mybrand-9c5a8.appspot.com",
+        messagingSenderId: "558814550067",
+        appId: "1:558814550067:web:20842c0c9511fb2674eb46",
+        measurementId: "G-NNEH7CQ3GM"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db= firebase.firestore();
+      const auth= firebase.auth();
+      db.settings = ({timestampsInSnapshots:true});
+    </script> 
+
+    
+   <script src="../JS/landing.js"></script>
+   <script src="../js/editblog.js"></script>
+  </body>
+  </html> 
