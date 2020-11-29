@@ -1,0 +1,380 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: Montserrat;
+}
+
+body{
+   background: #D9D3D3;
+
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #2F4F4F;
+    font-family:'poppins' ,sans-serif;
+    padding-top: opx;
+   
+}
+.logo a{
+    color:rgb(233, 224, 224);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-decoration: none;
+ 
+
+}
+
+
+.logo a:hover{
+   
+   color: darkorange;
+}
+
+
+
+.nav-links{
+    display:flex;
+    justify-content: space-around;
+    width:60%;
+    
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+   color:#c9c4c4;
+   text-decoration: none;
+   letter-spacing: 2px;
+   font-weight:bold; 
+}
+.fixed-nav-bar{
+   position:fixed;
+   top:0;
+   left:0;
+   z-index: 9999;
+   width:100%
+}
+
+.burger div{
+    width:25px;
+    height:3px;
+    margin:5px;
+    background-color:rgb(233, 224, 224);
+    transition: all 0.7s ease;
+}
+
+
+
+.burger{
+    display:none;
+    cursor: pointer;
+}
+@media screen and (max-width:1125px){
+    .nav-links{
+        width:60%;
+    }
+}
+@media screen and (max-width:836px){
+   .nav-links{
+       width:80%;
+   }
+}
+@media screen and (max-width:700px){
+   body{
+       overflow-x: hidden;
+   }
+
+    .nav-links{
+       position:absolute;
+       background-color:#2F4F4F;
+       right:0px;
+       height:92vh;
+       top:8vh;
+       display:flex;
+       flex-direction: column;
+       align-items: center;
+       width:45%;
+       transform:translateX(100%);
+       transition:transform 0.5s ease-in;
+    }
+    .nav-links li{
+       opacity:0px;
+   }
+   .burger{
+       display:block;
+   }
+
+
+
+} 
+     .nav-active{
+     transform:translateX(0%);
+   }
+@keyframes navLinkFade{
+   from{
+    opacity: 0;
+    transform: translateX(50px);
+   }
+   to{
+     opacity: 1;
+     transform: translateX(0%);
+   }
+}
+.toggle .line1{
+transform:rotate(-45deg)  translate(-12px,10px);
+}
+.toggle .line2{
+ opacity:0;  
+}
+.toggle .line3{
+   transform: rotate(45deg);  
+}
+
+
+.nav-links a:hover{
+   
+   color: darkorange;
+}
+
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 900px;
+    display: flex;
+    box-shadow: 0px 1px 20px 0px rgba(69,90,100,0.8);
+
+}
+.wrapper .left{
+    width: 40%;
+    background: #fefefe;
+    padding: 30px 25px;
+    text-align: center;
+    align-items: center;
+    
+}
+/* .profile-pic{
+    background-image: url("../assets/bertinn.jpg");
+}
+
+.profile-pic span{
+    margin-top: 40px;
+    text-decoration: none;
+    align-items: center;
+    
+} */
+ a{
+     text-decoration: none;
+ }
+
+  a:hover {
+    text-decoration: none;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    color: transparent;
+    transition: all .3s ease;
+    margin-left: 45px  !important;
+   margin-top: 30px;
+   margin-bottom: 30px;
+    
+    
+  }
+
+  form{
+      align-items: center;
+      margin-left: 40px;
+      margin-top: 90px;
+  }
+    /* .profile-pic:hover {
+      background-color: rgba(0,0,0,.5);
+      z-index: 10000;
+      color: rgba(250,250,250,1);
+      transition: all .3s ease;
+    }
+    
+    span {
+      display: inline-flex;
+      padding: .2em;
+    } */
+  
+/* .wrapper .left .input-file{
+    size: 5px;
+} */
+.wrapper .left img{
+    margin-bottom: 10px;
+    border-radius: 50%;
+    height: 90%;
+    width: 90%;
+
+}
+.wrapper .left h4{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.wrapper .left p{
+    font-size: 8px;
+}
+.wrapper .right{
+    width: 65%;
+    padding: 30px 25px;
+
+}
+.wrapper .right .info,
+.wrapper .right .projects{
+    margin-bottom: 25 px;
+    margin-top: 30px;
+
+}
+.wrapper .right .info h3,
+.wrapper .right .projects h3{
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #353c4e ;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 80px;
+
+}
+.wrapper .right .infoData,
+.wrapper .right .projectsData{
+    display: flex;
+    justify-content: space-between;
+}
+.wrapper .right .infoData .data,
+.wrapper .right .projectsData .data{
+    width: 45%;
+}
+.wrapper .right .infoData .data h4,
+.wrapper .right .projectsData .data h4{
+    margin-bottom: 5px;
+}
+.wrapper .right .infoData .data p,
+.wrapper .right .projectsData .data p{
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.wrapper .social ul{
+    display: flex;
+    margin-left: 100px
+
+}
+.wrapper .social ul li{
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    margin-left: 10px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 70px;
+
+}
+.wrapper .social ul li a{
+    display: block;
+    font-size: 18px;
+     
+}
+.wrapper .social ul li a img{
+    width: 20px;
+    height: 20;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 384px){
+
+    .wrapper{
+        position: relative;
+        height: auto;
+        width: 100% !important;
+        margin: 10px auto !important;
+    }
+    .wrapper .right{
+        height: auto;
+       
+    }
+    form{
+        margin-left: 10px;
+    }
+
+    
+}
+
+@media only screen and (max-width:435px){
+    .wrapper{
+        height: auto;
+        margin-top: 10px;
+    }
+} 
+
+
+
+@media only screen and (max-width:768px){
+   .wrapper {
+       height: auto;
+       margin-top: 10px;
+       width: 100%;
+   }
+   .wrapper .right .info,
+.wrapper .right .projects{
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+   .wrapper .right .info h3,
+   .wrapper .right .projects h3{
+       
+       margin-top: 10px;
+   
+   }
+   .wrapper .social ul li{
+margin-left: 0;
+    margin-top: 30px;
+
+}
+
+
+}
+
+    @media only screen and (max-width: 925px){
+    
+    .wrapper {
+        display: flex;
+        /* padding-top: 10px; */
+        margin-top: 20px;
+        margin-bottom: 60px;
+        flex-flow: column;
+        width: 78%;
+        top:500px;
+
+    }
+    .wrapper .left .profile-pic{
+        margin: auto !important;
+    }
+
+    .wrapper .left {
+        width: 100%;
+        
+    }
+    .wrapper .right {
+        width: 70%;
+    }
+    .wrapper .right .infoData, .wrapper .right .projectsData {
+        display: block;
+    }
+
+}
+
