@@ -17,7 +17,6 @@ const navSlide= () =>{
     });
 }
 navSlide();
-
 function addNavigation(){
     doc.style.display = 'none';
     var doc = document.getElementById('about');
