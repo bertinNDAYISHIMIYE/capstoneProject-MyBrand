@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" typetype="text/css" href="../css/dashex.css">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Dashboard</title>
+  </head>
+  <body>
+   <section id="nav-container">
+        <nav id="navigation" class="nav">
+            <div class="logo">
+                <h3><a href="index.html">Berry</a></h3>
+            </div>
+            <div class="menu" id="menu">
+                <ul> 
+                    <li class="burger-icon" onclick="dropNav()"><i class="fa fa-bars"></i></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blogpage.html">Blogs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="dashex.html">Dashboard</a></li>
+                    <li><a href="createblogs.html">Create blog</a></li>
+                   
+                    
+
+
+                </ul>
+                <div id='logout' class="logout"><p>Log Out</p></div>
+                <div class="user-avatar"><i class="fa fa-bars"onclick="dropNav()"></i> </div>
+            </div>
+
+        </nav>
+   </section>
+   <section id="main">
+        <div class="left-pane" id="left">
+            <li class="burger" onclick="closeSideNav()"><i class="fa fa-bars"></i></li>
+            <div class="menu-item active" onclick="display_item(0)">
+                <img src="../assets/dash.jpg" alt="">
+                <div class="menu-caption">Dashboard</div>
+
+            </div>
+
+            <div class="menu-item" onclick="display_item(1)">
+                <img src="../assets/download.jpeg" alt="">
+                <div class="menu-caption">Users</div>
+
+            </div>
+
+            <div class="menu-item" onclick="display_item(2)">
+                <img src="../assets/meassage.png" alt="">
+                <div class="menu-caption">Messages</div>
+
+            </div>
+
+            <div class="menu-item" onclick="display_item(3)">
+                <img src="../assets/blog.png" alt="">
+                <div class="menu-caption">Manage Blogs</div>
+
+            </div>
+<!-- 
+            <div class="menu-item" onclick="display_item(4)">
+                <img src="../assets/settings.png" alt="">
+                <div class="menu-caption">Settings</div>
+
+            </div> -->
+
+        </div>
+        <div class="right-pane">
+            <div class="pane-item">
+                <li class="burger" onclick="dropSideNav()"><i class="fa fa-bars"></i></li>
+                <div class="pane-item-title">
+                    Dashboard
+                </div>
+                <div class="pane-item-content">
+                    <div class="card active" onclick="display_item(0)">
+                        <div class="card-image">
+                            <img src="../assets/dash.jpg" alt="">
+                        </div>
+                        <div class="card-text">
+                            dashboard
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="display_item(1)">
+                        <div class="card-image">
+                            <img src="../assets/download.jpeg" alt="">
+                        </div>
+                        <div class="card-text">
+                           users
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="display_item(3)">
+                        <div class="card-image">
+                            <img src="../assets/blog.png" alt="">
+                        </div>
+                        <div class="card-text">
+                           Manage Blogs
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="display_item(2)">
+                        <div class="card-image">
+                            <img src="../assets/meassage.png" alt="">
+                        </div>
+                        <div class="card-text">
+                            Messages
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="display_item(4)">
+                        <!-- <div class="card-image">
+                            <img src="../assets/settings.png" alt="">
+                        </div>
+                        <div class="card-text">
+                            Settings
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pane-item">
+                <li class="burger" onclick="dropSideNav()"><i class="fa fa-bars"></i></li>
+                <div class="pane-item-title">
+                    Users
+                </div>
+                <div class="pane-item-content">
+                    <table id="users">
+                        <tr>
+                            
+                            <th>Username</th>
+                            <th>User_email</th>
+                            
+                        </tr>
+
+                        
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="pane-item">
+                <li class="burger" onclick="dropSideNav()"><i class="fa fa-bars"></i></li>
+                <div class="pane-item-title">
+                    Message
+                </div>
+                <div class="pane-item-content">
+                    <table id="inquiryTable">
+                        <tr>
+                            
+                            <th>Message</th>
+                            <th>Sender</th>
+                            <th>Date</th>
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="pane-item">
+                <li class="burger" onclick="dropSideNav()"><i class="fa fa-bars"></i></li>
+                <div class="pane-item-title">
+                   Manage Blogs
+                </div>
+                <div class="pane-item-content">
+                    <table id='blogs-area'>
+                        <tr>
+                            <th>Date</th>
+                            <th>Title</th>
+                            <th>Blog_Writter</th>
+                            <th>Manage</th>
+                        </tr>     
+
+        </div>
+   </section>
+
+<footer></footer>
+
+</section>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyBLzeLvvwp6JPiC22FT-afIvtsBv4p_aXw",
+          authDomain: "mybrand-9c5a8.firebaseapp.com",
+          databaseURL: "https://mybrand-9c5a8.firebaseio.com",
+          projectId: "mybrand-9c5a8",
+          storageBucket: "mybrand-9c5a8.appspot.com",
+          messagingSenderId: "558814550067",
+          appId: "1:558814550067:web:20842c0c9511fb2674eb46",
+          measurementId: "G-NNEH7CQ3GM"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db= firebase.firestore();
+        const auth = firebase.auth();
+        db.settings = ({timestampsInSnapshots:true});
+      </script> 
+   
+   <script src="../js/dashboard.js"></script>
+   <script src="../js/contact.js"></script>
+   <script src="../js/logOut.js"></script>
+  </body>
+  </html>  
