@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" typetype="text/css" href="../css/signin.css">
+   
+    <title>Sign in</title>
+  </head>
+  <body>
+      <section>
+<section>
+    <nav class="fixed-nav-bar">
+        <div class="logo">
+            <h3><a href="index.html">Berry</a></h3>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="blogpage.html">Blog</a></li>
+            
+            <li><a href="dashex.html">Dashboard</a></li>
+            <li><a href="contactpage.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    </section>
+
+   <section id="form-container">
+       <div class="form">
+           <div class="form-left">
+                <div class="overlay">
+
+                </div>
+           </div>
+           <div class="form-right">
+               <div class="form-title">
+                   Sign in
+               </div>
+               <form action="submit"   id="sign" >
+                    <label for="email" class="label">Email : </label><br/>
+                    <input type="email" name="email" id="email"><br/>
+
+                    <label for="password" class="label" >Password : </label><br/>
+                    <input type="password" name="password" id="pass"><br/>
+                    <button  class="submit-button" type="submit" id="btn"  value="Log in">Log in</button>
+                     <div id="error_message">
+                     </div>
+                     <div class="reg"><h6>Don't have account?...<a href="registration.html">  Sign Up</a></h6></div>
+               </form>
+
+           </div>
+       </div>
+   </section>
+  </section>
+   
+   
+
+  </body>
+
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBLzeLvvwp6JPiC22FT-afIvtsBv4p_aXw",
+    authDomain: "mybrand-9c5a8.firebaseapp.com",
+    databaseURL: "https://mybrand-9c5a8.firebaseio.com",
+    projectId: "mybrand-9c5a8",
+    storageBucket: "mybrand-9c5a8.appspot.com",
+    messagingSenderId: "558814550067",
+    appId: "1:558814550067:web:20842c0c9511fb2674eb46",
+    measurementId: "G-NNEH7CQ3GM"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ const auth = firebase.auth();
+</script> 
+<!-- <script src="../js/signin.js"></script> -->
+<script src="../js/landing.js"></script>
+<script src="../js/auth.js"></script>
+</html> 
