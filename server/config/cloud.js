@@ -3,9 +3,9 @@ import {Response} from "../helper/response.js";
 
  cloudinary.v2;
 cloudinary.config({
-    cloud_name:'bertin',
-    api_key:'996829211724617',
-    api_secret:'55YhbqREqpUtjfP_R6Hwo2i4EPs',
+    cloud_name: process.env.CLOUDNAME,
+    api_key: process.env.APIKEY,
+    api_secret: process.env.APISECRET,
 });
 export const uploadToCloud = async (file, res) => {
   try {
