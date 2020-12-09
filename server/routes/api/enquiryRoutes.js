@@ -11,6 +11,8 @@ router.get("/enquiries",verifyToken.checkAdmin, enquiriescontrollers.Allenquirie
 router.post("/enquiries",enquiryValidation.enquiryvalidation, enquiriescontrollers.makeEnquiry);
 
 
+//updating an enquity
+router.put("/enquiries/:id",verifyToken.checkAdmin, enquiryValidation.enquiryvalidation, enquiriescontrollers.updateEnquiry)
 
 
 export default router

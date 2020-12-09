@@ -40,5 +40,28 @@ export class enquiriescontrollers {
     }
   };
 
+  static updateEnquiry = async (req, res) => {
+    try {
+      const enquiry = await enquiries.findOne({ _id: req.params.id });
+
+      if (req.body.name) {
+        enquiry.name = req.body.name;
+      }
+
+      if (req.body.email) {
+        enquiry.email = req.body.email;
+      }
+
+      if (req.body.message) {
+        enquiry.message = req.body.message;
+      }
+
+      await enquiry.save();
+      res.send(enquiry);
+    } catch {
+      res.status(404);
+      res.send({ error: "enquiry doesn't exist!" });
+    }
+  };
 
  }
