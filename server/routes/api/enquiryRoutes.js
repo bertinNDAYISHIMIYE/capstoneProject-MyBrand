@@ -12,5 +12,8 @@ router.post("/enquiries",enquiryValidation.enquiryvalidation, enquiriescontrolle
 
 
 
+//deleting an enquiry
+router.delete("/enquiries/:id",verifyToken.checkAdmin, enquiriescontrollers.deleteEnquiry)
+
 
 export default router

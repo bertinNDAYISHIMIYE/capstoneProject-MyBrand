@@ -40,5 +40,23 @@ export class enquiriescontrollers {
     }
   };
 
+  static deleteEnquiry = async(req,res) => {
+    let {id} = req.params;
+
+    try {
+        const existEnquiry = await enquiries.find({_id: id})
+
+        if (existEnquiry.length) {
+            const deleteEnquiry = await enquiries.deleteOne({_id: id});
+            res.send({'Deleted enquiry': existEnquiry}).status(200);
+        } else {
+            res.json('enquiry not found').status(404);
+        }
+    } catch (error) {
+        res.json(error).status(500);
+    }
+    
+   
+}
 
  }
