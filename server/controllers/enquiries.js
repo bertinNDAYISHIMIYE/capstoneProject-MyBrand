@@ -3,6 +3,7 @@ import enquiries from "../models/enquiriesModal.js";
 export class enquiriescontrollers {
 
 
+
   static makeEnquiry = async (req, res) => {
     const enquiry = new enquiries({
       name: req.body.name,
@@ -15,5 +16,29 @@ export class enquiriescontrollers {
       message: "enquiry created",
     });
   };
+
+
+  static Allenquiries = async (req, res) => {
+    try {
+      const enquiry = await enquiries.find();
+      if (!enquiry) {
+        return res.status(404).json({
+          message: "enquiries not found",
+        });
+      } else {
+        return res.status(200).json({
+          message: "enquiries found",
+          data: enquiry,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        status: 500,
+        message: "server error",
+      });
+    }
+  };
+
 
  }
