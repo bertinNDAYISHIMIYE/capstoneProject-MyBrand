@@ -40,8 +40,9 @@ export class enquiriescontrollers {
     }
   };
 
-  static deleteEnquiry = async(req,res) => {
+ static deleteEnquiry = async(req,res) => {
     let {id} = req.params;
+  
 
     try {
         const existEnquiry = await enquiries.find({_id: id})
@@ -53,7 +54,10 @@ export class enquiriescontrollers {
             res.json('enquiry not found').status(404);
         }
     } catch (error) {
-        res.json(error).status(500);
+        res.json({
+          status: 500,
+          message: "server error"
+        }).status(500);
     }
     
    
