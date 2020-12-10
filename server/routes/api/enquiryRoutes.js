@@ -10,6 +10,9 @@ router.get("/enquiries",verifyToken.checkAdmin, enquiriescontrollers.Allenquirie
 //post enquiry
 router.post("/enquiries",enquiryValidation.enquiryvalidation, enquiriescontrollers.makeEnquiry);
 
+//get one enquiry
+router.get("/enquiries/:id",verifyToken.checkAdmin, enquiriescontrollers.findOneEnquiry)
+
 
 
 
