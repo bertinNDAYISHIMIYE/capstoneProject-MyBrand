@@ -1,6 +1,8 @@
 import Router from 'express';
-import enquiryRoutes from './enquiriesRoutes.js';
 import blogsRoutes from './blogs.js';
+import enquiryRoutes from './enquiryRoutes.js';
+
+
 
 const router = Router();
 
