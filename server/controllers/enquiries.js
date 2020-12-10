@@ -40,6 +40,19 @@ export class enquiriescontrollers {
     }
   };
 
+   static updateEnquiry = async(req,res) => {
+    try{
+        const id = req.params.id;
+        const enquiry = await enquiries.findByIdAndUpdate({_id: id}, req.body);
+        const updateEnquiry = await enquiries.findOne({_id: id});
+        res.json(updateEnquiry).status(200);
+    }
+    catch(error){
+        res.send({message: 'enquiry not found'}).status(404)
+    }
+
+    
+}
 
   static findOneEnquiry = async (req, res) => {
     try {
