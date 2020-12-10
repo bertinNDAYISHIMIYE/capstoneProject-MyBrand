@@ -9,5 +9,6 @@ const router = Router();
 router.post('/addBlog',upload.single('image'),blogValidation.blogvalidation,verifyToken.checkAdmin, blogController.createBlog );
 
 
-
+//delete a blog
+router.delete('/delete/:id', verifyToken.checkAdmin, blogController.deleteBlog);
 export default router;
