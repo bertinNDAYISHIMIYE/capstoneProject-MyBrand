@@ -8,6 +8,7 @@ const router = Router();
 
 router.post('/addBlog',upload.single('image'),blogValidation.blogvalidation,verifyToken.checkAdmin, blogController.createBlog );
 
-
+//get all blogs
+router.get('/', blogController.getBlogs);
 
 export default router;
