@@ -9,5 +9,5 @@ const router = Router();
 router.post('/addBlog',upload.single('image'),blogValidation.blogvalidation,verifyToken.checkAdmin, blogController.createBlog );
 
 
-
+router.put('/updateBlog/:id',verifyToken.checkAdmin,upload.single('image'),blogValidation.blogvalidation, blogController.updateBlog);
 export default router;
