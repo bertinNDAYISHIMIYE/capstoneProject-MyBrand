@@ -29,6 +29,18 @@ static createBlog = async (req, res) => {
     
 }
     
+
+static deleteBlog = async(req,res) => {
+  let {id} = req.params;
+  try {
+      const existBlog = await Blog.find({_id: id})
+      
+      if (existBlog.length) {
+          const deleteBlog = await Blog.deleteOne({_id: id});
+          res.send({'Deleted Blog': existBlog}).status(200);
+      } else {
+          res.json('Blog not found').status(404);
+
 static getBlogs = async (req, res)=>{
   try {
       const blogs = await Blog.find();
@@ -71,6 +83,9 @@ static getBlogById = async (req, res) => {
         status: 500,
         message: "server error"
       }).status(500);
+
+  } 
+
   }
   
 }
