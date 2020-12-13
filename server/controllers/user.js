@@ -32,4 +32,14 @@ static createAccount = async (req, res) => {
     }
 };
 
+static login = async (req, res) => {
+    try {
+        const user = { email: req.body.email, password: req.body.password }
+        jwt.sign({ user: user }, 'secretkey', (error, token) => {
+            res.status(200).json({ token });
+        })
+    } catch (error) {
+        return res.json(error.message).status(500);
+    }
+};
 }

@@ -8,4 +8,5 @@ const router = Router();
 
 router.post('/signUp',usersValidation.usersvalidation, usercontrollers.createAccount);
 
+router.post('/login',usersloginValidation.usersvalidation, usercontrollers.login);
 export default router;
