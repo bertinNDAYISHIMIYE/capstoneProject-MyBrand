@@ -30,6 +30,44 @@ static createBlog = async (req, res) => {
 }
     
 
+
+static updateBlog = async(req,res,next) => {
+    
+  const image= await uploadToCloud(req.file,res);
+
+ try{
+     const id = req.params.id;
+     const blog = await Blog.findByIdAndUpdate({_id: id}, {
+         title: req.body.title,
+         author: req.body.author,
+         image: image.url,
+         content: req.body.content
+     },  { new: true});
+     const updateBlog = await Blog.findOne({_id: id});
+     if(updateBlog){
+   return  res.status(200).json({
+         status: 200,
+         message:"updated blog",
+         data: updateBlog
+     });
+ } 
+ else {
+   return  res.status(404).json({
+         status: 404,
+         message: "blog not found"
+     })
+ }
+  }
+ catch(error){
+     res.end();
+  return   res.status(404).send({message: 'Blog not found'})
+  
+ }
+
+ 
+}
+
+
 static deleteBlog = async(req,res) => {
   let {id} = req.params;
   try {
@@ -89,4 +127,5 @@ static getBlogById = async (req, res) => {
   }
   
 }
+
 };

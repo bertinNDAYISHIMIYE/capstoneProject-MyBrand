@@ -1,5 +1,6 @@
 import  cloudinary from "cloudinary";
 import {Response} from "../helper/response.js";
+import {CLOUDNAME,APIKEY,APISECRET} from "../config/env.js";
 
  cloudinary.v2;
 cloudinary.config({
