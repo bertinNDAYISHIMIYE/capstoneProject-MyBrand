@@ -50,4 +50,28 @@ static getBlogs = async (req, res)=>{
 }
 
 
+static getBlogById = async (req, res) => {
+  try {
+      const _id = req.params.id;
+      
+      const blog = await  Blog.findOne({ _id: req.params.id });
+     if (!blog){
+       return res.status(404).json({
+         status: 404,
+         message: "blog not found"
+       })
+     }else{
+  return    res.json({
+    status: 200,
+    data: blog
+  }).status(200);
+      }
+  } catch (error) {
+      res.json({
+        status: 500,
+        message: "server error"
+      }).status(500);
+  }
+  
+}
 };
