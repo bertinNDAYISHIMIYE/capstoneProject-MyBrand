@@ -70,7 +70,7 @@ static getUsers = async (req, res) => {
 static login = async (req, res) => {
     try {
         const user = { email: req.body.email, password: req.body.password }
-        jwt.sign({ user: user }, 'secretkey', (error, token) => {
+        jwt.sign({ user: user }, process.env.SECRETKEY, (error, token) => {
             res.status(200).json({ token });
         })
     } catch (error) {
