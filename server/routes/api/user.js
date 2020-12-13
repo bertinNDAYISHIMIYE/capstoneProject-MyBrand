@@ -8,5 +8,13 @@ const router = Router();
 
 router.post('/signUp',usersValidation.usersvalidation, usercontrollers.createAccount);
 
+
 router.delete('/deleteUser/:id',verifyToken.checkAdmin, usercontrollers.deleteUser);
+
+
+router.get('/', verifyToken.checkAdmin, usercontrollers.getUsers);
+
+router.post('/login',usersloginValidation.usersvalidation, usercontrollers.login);
+
+
 export default router;
