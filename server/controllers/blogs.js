@@ -29,5 +29,25 @@ static createBlog = async (req, res) => {
     
 }
     
+static getBlogs = async (req, res)=>{
+  try {
+      const blogs = await Blog.find();
+      
+      if(blogs.length === 0){
+          return res.send('No blogs in the database').status(400) 
+      }
+      else {
+          return res.send({
+              status: 200,
+              message: 'Get request',
+              blogs
+          }).status(200)     
+      }
+  }
+  catch (error) {
+      res.send(error).status(500);
+  }
+}
+
 
 };
