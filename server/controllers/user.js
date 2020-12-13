@@ -32,6 +32,24 @@ static createAccount = async (req, res) => {
     }
 };
 
+
+static getUsers = async (req, res) => {
+    try {
+        const users = await Users.find();
+        if(!users){
+            res.status(404).json({
+                status: 404,
+                message: "users not found!"
+            })
+        }else{
+        res.json({ users: users }).status(200);
+    }
+    } catch (error) {
+        res.json(error).status(400);
+    }
+};
+
+
 static login = async (req, res) => {
     try {
         const user = { email: req.body.email, password: req.body.password }
