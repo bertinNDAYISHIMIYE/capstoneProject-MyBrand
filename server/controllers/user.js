@@ -31,6 +31,23 @@ static createAccount = async (req, res) => {
         res.json(error.message).status(400);
     }
 };
+static deleteUser = async (req, res) => {
+    try {
+        let { id } = req.params;
+        const existUser = await Users.find({ _id: id });
+
+        if (existUser.length) {
+            const deletedUser = await Users.deleteOne({ _id: id });
+
+            res.json({ status: 200, 'Deleted user': existUser });
+        }
+        else {
+            res.json('user not found').status(404);
+        }
+    } catch (error) {
+        throw new Error(error)
+    }
+}
 
 
 static getUsers = async (req, res) => {
