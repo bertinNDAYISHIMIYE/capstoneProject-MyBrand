@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon --exec babel-node index.js",
-    "dev": "nodemon index.js",
-    "test": "export NODE_ENV=test && mocha --timeout 100000 ./tests/**.test.js --exit --require @babel/register ",
-    "coverage": "nyc npm test"
+    "dev": "nodemon ./server/index.js",
+    "test": "export NODE_ENV=test && mocha server/tests/**.test.js --require @babel/register --timeout 100000 --exit",
+    "coverage": "nyc npm run test",
+    "cover": "nyc --reporter=html --reporter=text npm test"
   },
   "keywords": [],
   "author": "",
@@ -36,7 +37,9 @@
     "mongoose": "^5.10.15",
     "multer": "^1.4.2",
     "path": "^0.12.7",
-    "sinon": "^9.2.2"
+    "sinon": "^9.2.2",
+    "swagger-jsdoc": "^6.0.0-rc.5",
+    "swagger-ui-express": "^4.1.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
