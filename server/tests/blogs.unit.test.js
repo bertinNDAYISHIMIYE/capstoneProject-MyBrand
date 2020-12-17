@@ -1,5 +1,6 @@
 import Mock from "./mocks/res.moch";
 import { blogController } from "../controllers/blogs";
+import { usercontrollers } from "../controllers/user";
 import chai, { expect } from "chai";
 
 describe("500 blog tests", () => {
@@ -27,3 +28,30 @@ describe("500 blog tests", () => {
     expect(results.statusCode).to.be.equal(500);
   });
 });
+
+
+describe('Usern 500', ()=>{
+  it("should return 500 (getBlogById)", async () => {
+    const results = await usercontrollers.createAccount(
+      Mock.request,
+      Mock.response
+    );
+    expect(results.statusCode).to.be.equal(500);
+  });
+
+  it("should return 500 (getBlogById)", async () => {
+    const results = await usercontrollers.deleteUser(
+      Mock.request,
+      Mock.response
+    );
+    expect(results.statusCode).to.be.equal(500);
+  });
+
+  it("should return 500 (getBlogById)", async () => {
+    const results = await usercontrollers.login(
+      Mock.request,
+      Mock.response
+    );
+    expect(results.statusCode).to.be.equal(500);
+  });
+})
