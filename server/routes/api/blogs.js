@@ -1,10 +1,13 @@
+/* eslint-disable import/named */
+/* eslint-disable import/extensions */
 import Router from 'express';
-import {blogController} from "../../controllers/blogs.js";
+import { blogController } from '../../controllers/blogs.js';
 import { verifyToken } from '../../middleware/auth.js';
-import {upload} from '../../config/multer.js';
-import {blogValidation} from '../../middleware/validators/blogValidation.js';
+import { upload } from '../../config/multer.js';
+import { blogValidation } from '../../middleware/validators/blogValidation.js';
 
 const router = Router();
+<<<<<<< HEAD
 /**
 * @swagger
 * /blogs/addBlog:
@@ -166,5 +169,20 @@ router.delete('/delete/:id', verifyToken.checkAdmin, blogController.deleteBlog);
 //get one blog by id
 router.get('/:id',blogController.getBlogById);
 
+=======
+
+router.post('/addBlog', upload.single('image'), blogValidation.blogvalidation, verifyToken.checkAdmin, blogController.createBlog);
+
+// get all blogs
+router.get('/', blogController.getBlogs);
+
+router.put('/updateBlog/:id', verifyToken.checkAdmin, upload.single('image'), blogValidation.blogvalidation, blogController.updateBlog);
+
+// delete a blog
+router.delete('/delete/:id', verifyToken.checkAdmin, blogController.deleteBlog);
+
+// get one blog by id
+router.get('/:id', blogController.getBlogById);
+>>>>>>> applying ESlint
 
 export default router;

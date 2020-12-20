@@ -1,21 +1,20 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/prefer-default-export */
+import jwt from 'jsonwebtoken';
+import { JWT_KEY } from '../config/env.js';
 
-import {JWT_KEY} from "../config/env"
+import { Response } from '../helper/response.js';
 
-import jwt from "jsonwebtoken";
-import {Response} from "../helper/response";
-
-export class verifyToken{
-
-static  checkAdmin (req, res, next)  {
-    const token = req.header("Authorization");
-    if (!token)
-      return Response.error(res, 401, "Access denied. no token provided ");
+export class verifyToken {
+  static checkAdmin(req, res, next) {
+    const token = req.header('Authorization');
+    if (!token) return Response.error(res, 401, 'Access denied. no token provided ');
     try {
       const decode = jwt.verify(token, JWT_KEY);
       req.user = decode;
-     return next();
+      return next();
     } catch (error) {
-      return Response.error(res, 401, "Invalid token.");
+      return Response.error(res, 401, 'Invalid token.');
     }
-}
+  }
 }

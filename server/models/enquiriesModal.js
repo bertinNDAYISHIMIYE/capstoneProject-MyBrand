@@ -1,11 +1,9 @@
 import mongoose from 'mongoose';
 
 const schema = mongoose.Schema({
-	name: String,
-	email: String,
-	message: String,
-})
+  name: String,
+  email: String,
+  message: String,
+});
 
-
-
-export default mongoose.model("enquiries", schema)
+export default mongoose.model('enquiries', schema);

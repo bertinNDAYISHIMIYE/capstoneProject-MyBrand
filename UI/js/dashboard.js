@@ -1,155 +1,126 @@
-
-function dropNav(){
-    var menu= document.getElementById("menu");
-    if(menu.className === "menu"){
-        menu.className+=" responsive-nav";
-    }
-    else{
-        menu.className="menu";
-    }
-
-} 
-
-
-var pane_item=document.getElementsByClassName("pane-item");
-pane_item[0].style.display="block";
-function display_item(n){
-    var menu=document.getElementsByClassName("menu-item");
-    for(let i=0; i<menu.length; i++){
-        menu[i].classList.remove("active");
-        pane_item[i].style.display="none";
-    }
-
-    menu[n].classList.add("active");
-    pane_item[n].style.display="block";
+/* eslint-disable no-unused-vars */
+/* eslint-disable consistent-return */
+/* eslint-disable camelcase */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
+function dropNav() {
+  const menu = document.getElementById('menu');
+  if (menu.className === 'menu') {
+    menu.className += ' responsive-nav';
+  } else {
+    menu.className = 'menu';
+  }
 }
 
+const pane_item = document.getElementsByClassName('pane-item');
+pane_item[0].style.display = 'block';
+function display_item(n) {
+  const menu = document.getElementsByClassName('menu-item');
+  for (let i = 0; i < menu.length; i++) {
+    menu[i].classList.remove('active');
+    pane_item[i].style.display = 'none';
+  }
 
-
-
-
-var sideNav= document.getElementById("left");
-function dropSideNav(){
-    sideNav.classList.add("responsive");
+  menu[n].classList.add('active');
+  pane_item[n].style.display = 'block';
 }
-function closeSideNav(){
-    sideNav.classList.remove("responsive");
-} 
 
+const sideNav = document.getElementById('left');
+function dropSideNav() {
+  sideNav.classList.add('responsive');
+}
+function closeSideNav() {
+  sideNav.classList.remove('responsive');
+}
 
-//.................blogs................
+// .................blogs................
 
-const blogsArea= document.querySelector('#blogs-area');
-db.collection('blogs').get().then((snapshot)=>{
-    snapshot.docs.forEach(doc => {
-        renderBlogs(doc);
-    });
-}).catch(err =>{
-    console.log(err.message);
+const blogsArea = document.querySelector('#blogs-area');
+db.collection('blogs').get().then((snapshot) => {
+  snapshot.docs.forEach((doc) => {
+    renderBlogs(doc);
+  });
+}).catch((err) => {
+  console.log(err.message);
 });
 
-function renderBlogs(doc){
-  
-    let blog= document.createElement('tr');
-    blog.setAttribute('tag','blog');
-    blog.setAttribute('data-id',doc.id);
+function renderBlogs(doc) {
+  const blog = document.createElement('tr');
+  blog.setAttribute('tag', 'blog');
+  blog.setAttribute('data-id', doc.id);
 
-    let blogDate= document.createElement('td');
-    blogDate.setAttribute('tag','blog-date');
+  const blogDate = document.createElement('td');
+  blogDate.setAttribute('tag', 'blog-date');
 
-    let blogTitle= document.createElement('td');
-    blogTitle.setAttribute('tag','blog-title');
-  
+  const blogTitle = document.createElement('td');
+  blogTitle.setAttribute('tag', 'blog-title');
 
-    let blogAuthor= document.createElement('td');
-    blogAuthor.setAttribute('tag','blog-author');
-    
+  const blogAuthor = document.createElement('td');
+  blogAuthor.setAttribute('tag', 'blog-author');
 
+  const blogBtns = document.createElement('td');
+  blogBtns.setAttribute('tag', 'blog-btns');
 
-    let blogBtns= document.createElement('td');
-    blogBtns.setAttribute('tag','blog-btns');
+  const editBtn = document.createElement('button');
+  editBtn.setAttribute('class', 'one');
+  editBtn.setAttribute('data-id', doc.id);
 
+  const deleteBtn = document.createElement('button');
+  deleteBtn.setAttribute('class', 'two');
+  deleteBtn.setAttribute('data-id', doc.id);
 
-    let editBtn= document.createElement('button');
-    editBtn.setAttribute('class','one');
-    editBtn.setAttribute('data-id',doc.id);
+  blogDate.textContent = doc.data().time;
+  // blogDate.textContent= moment(doc.data().time).format("DD-MM-YYYY h:mm:ss");
+  blogTitle.textContent = doc.data().title;
+  blogAuthor.textContent = doc.data().Author;
 
-    let deleteBtn= document.createElement('button');
-    deleteBtn.setAttribute('class','two');
-    deleteBtn.setAttribute('data-id',doc.id);
+  editBtn.textContent = 'Edit';
+  deleteBtn.textContent = 'Delete';
 
-    blogDate.textContent= doc.data().time;
-    // blogDate.textContent= moment(doc.data().time).format("DD-MM-YYYY h:mm:ss");
-    blogTitle.textContent= doc.data().title;
-    blogAuthor.textContent= doc.data().Author;
+  blogBtns.appendChild(editBtn);
+  blogBtns.appendChild(deleteBtn);
 
-    editBtn.textContent="Edit";
-    deleteBtn.textContent="Delete";
+  blog.appendChild(blogDate);
+  blog.appendChild(blogTitle);
+  blog.appendChild(blogAuthor);
+  blog.appendChild(blogBtns);
 
+  blogsArea.appendChild(blog);
 
-
-    blogBtns.appendChild(editBtn);
-    blogBtns.appendChild(deleteBtn);
-
-    
-
-
-    blog.appendChild(blogDate);
-    blog.appendChild(blogTitle);
-    blog.appendChild(blogAuthor);
-    blog.appendChild(blogBtns);
-
-
-
-   
-
-    blogsArea.appendChild(blog);
-    
-
-    auth.onAuthStateChanged(user=>{
-      
-        if(user){
-    deleteBtn.addEventListener('click', (e)=>{
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      deleteBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        let id= e.target.getAttribute('data-id');
+        const id = e.target.getAttribute('data-id');
         console.log(id);
         db.collection('blogs').doc(id).delete();
-        alert("Blog Deleted successfully!");
-        
-    
-    });
+        alert('Blog Deleted successfully!');
+      });
 
-    editBtn.addEventListener('click', (e)=>{
+      editBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        let id= e.target.getAttribute('data-id');
+        const id = e.target.getAttribute('data-id');
         console.log(id);
-        alert("Your are being redirected");
+        alert('Your are being redirected');
 
-        location.replace("edit-blog.html?"+id);     
-        
-
-    });
-        }else if(editBtn.addEventListener('click', ()=>{ alert('please login to edit');})|| deleteBtn.addEventListener('click', ()=>{ alert('please login to delete');})){
-           
-            console.log('user logged out', user);
-        }
-    })
-
-    
-
+        location.replace(`edit-blog.html?${id}`);
+      });
+    } else if (editBtn.addEventListener('click', () => { alert('please login to edit'); }) || deleteBtn.addEventListener('click', () => { alert('please login to delete'); })) {
+      console.log('user logged out', user);
+    }
+  });
 }
 
+// getting users
 
+function getUsers() {
+  const table = document.getElementById('users');
 
-//getting users
-
-function getUsers(){
-  
-   
-  let table = document.getElementById('users');
-  
-  db.collection('users').get().then((users)=>{
-    users.forEach(use => {
+  db.collection('users').get().then((users) => {
+    users.forEach((use) => {
       table.innerHTML += `
     <tr>
       
@@ -157,9 +128,9 @@ function getUsers(){
       <td>${use.data().email}</td>
       
     </tr>
-      `
+      `;
     });
-  })
+  });
 }
 
 getUsers();
@@ -171,4 +142,3 @@ getUsers();
 //   .catch(function(error) {
 //     console.log('Error fetching user data:', error);
 //   });
-
