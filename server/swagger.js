@@ -5,6 +5,7 @@ const Definitions = () => ({
     title: "My Brand ",
     description: " Mr bertin website and blog portfolio ",
   },
+  servers: [      {        url: 'https://mybrand-bertin.herokuapp.com/',      },    ],
   schemes: ["http", "https"],
   basePath: "/api/",
   produces: ["application/json"],
