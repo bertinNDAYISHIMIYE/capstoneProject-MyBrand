@@ -2,8 +2,8 @@ import swaggerUi from "swagger-ui-express";
 import swaggerJSDocs from "swagger-jsdoc";
 const Definitions = () => ({
   info: {
-    title: "Mr Chris Portfolio",
-    description: " Mr Chris website and blog portfolio ",
+    title: "My Brand ",
+    description: " Mr bertin website and blog portfolio ",
   },
   schemes: ["http", "https"],
   basePath: "/api/",

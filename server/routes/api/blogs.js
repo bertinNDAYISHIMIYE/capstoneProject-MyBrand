@@ -145,7 +145,7 @@ router.delete('/delete/:id', verifyToken.checkAdmin, blogController.deleteBlog);
  *     tags:
  *       - Blogs
  *     name: Blog
- *     summary: Retrieve all blogs
+ *     summary: Retrieve one blog by id
  *     consumes:
  *        - application/json
  *     parameters:
