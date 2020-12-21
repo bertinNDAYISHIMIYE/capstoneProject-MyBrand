@@ -34,7 +34,7 @@ const router = Router();
 *                comment:
 *                 type: string
 *                 required: true
-*              
+*
 *     responses:
 *       201:
 *             description: Comment successfully added.

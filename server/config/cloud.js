@@ -3,6 +3,7 @@
 /* eslint-disable import/extensions */
 import cloudinary from 'cloudinary';
 import { Response } from '../helper/response.js';
+import { CLOUDNAME, APIKEY, APISECRET } from './env.js';
 
 cloudinary.v2;
 cloudinary.config({
