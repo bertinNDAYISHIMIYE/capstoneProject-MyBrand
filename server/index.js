@@ -11,6 +11,12 @@ const port = process.env.PORT || 3030;
     dotenv.config({ path: "./config/config.env" });
     //connect to db
     connectDB();
+    app.get('/',(req,res) => {
+        res.status(200).json({
+            status: 200,
+            message: 'welcome to my api (:'
+        });
+    })
     app.use('/', router);
    
     app.use((req,res) => {
