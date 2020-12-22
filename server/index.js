@@ -2,6 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import router from './routes/index.js';
 import connectDB from './config/dbconfig.js';
+import route from './routes/index.js';
+//import {setUpSwaggerUi} from './swagger.js'
 const port = process.env.PORT || 3030;
 
 
@@ -17,6 +19,8 @@ const port = process.env.PORT || 3030;
             message: 'welcome to my api (:'
         });
     })
+    route(app)
+    // setUpSwaggerUi(app);
     app.use('/', router);
    
     app.use((req,res) => {
