@@ -1,7 +1,10 @@
-import Router from "express";
-import {blogcomments} from "../../controllers/blogscomments.js";
-import { commentValidation } from "../../middleware/validators/commentsvalidation.js";
+/* eslint-disable import/named */
+/* eslint-disable import/extensions */
+import Router from 'express';
+import { blogcomments } from '../../controllers/blogscomments.js';
+import { commentValidation } from '../../middleware/validators/commentsvalidation.js';
 import { verifyToken } from '../../middleware/auth.js';
+
 const router = Router();
 /**
 * @swagger
@@ -31,7 +34,7 @@ const router = Router();
 *                comment:
 *                 type: string
 *                 required: true
-*              
+*
 *     responses:
 *       201:
 *             description: Comment successfully added.
@@ -43,5 +46,5 @@ const router = Router();
 *             description: server error.
 * */
 
-router.post("/:id",commentValidation.commentvalidation, verifyToken.checkAdmin, blogcomments.addComment);
+router.post('/:id', commentValidation.commentvalidation, verifyToken.checkAdmin, blogcomments.addComment);
 export default router;

@@ -1,3 +1,4 @@
+
 import path from "path";
 import os from "os";
 
@@ -15,11 +16,12 @@ const swaggerOptions = {
     security: {},
     servers: [
       {
+        
         url: "http://localhost:3030",
         name: `${os.hostname()}`,
       },
       {
-        url: `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`,
+        url: 'https://mybrand-bertin.herokuapp.com/',
         name: `${os.hostname()}`,
       },
     ],

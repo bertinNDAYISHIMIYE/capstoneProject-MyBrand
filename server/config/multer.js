@@ -1,20 +1,22 @@
-import multer from "multer";
-const storage = multer.diskStorage({});
-import path from "path";
-const fileFilter = (req, file, cb) => {
-    const filetypes = /jpeg|jpg|png|gif/;
-    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-    const mimetype = filetypes.test(file.mimetype);
+/* eslint-disable consistent-return */
+/* eslint-disable import/prefer-default-export */
+import multer from 'multer';
+import path from 'path';
 
-    if (mimetype && extname) {
-        return cb(null, true);
-    } else {
-        cb('Error: Images Only!', null);
-    }
-}
+const storage = multer.diskStorage({});
+const fileFilter = (req, file, cb) => {
+  const filetypes = /jpeg|jpg|png|gif/;
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  const mimetype = filetypes.test(file.mimetype);
+
+  if (mimetype && extname) {
+    return cb(null, true);
+  }
+  cb('Error: Images Only!', null);
+};
 export const upload = multer({
-    dest: "uploads/",
-     storage: storage ,
-     limits : {fileSize : 1000000},
-     fileFilter: fileFilter
+  dest: 'uploads/',
+  storage,
+  limits: { fileSize: 1000000 },
+  fileFilter,
 });

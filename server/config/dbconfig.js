@@ -1,10 +1,10 @@
+/* eslint-disable import/extensions */
 import mongoose from 'mongoose';
-import {  MONGO_URL } from '../config/env.js'
+import { MONGO_URL } from './env.js';
 
-
-const connectDB = async () => { 
+const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(MONGO_URL,  {
+    const conn = await mongoose.connect(MONGO_URL, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false,

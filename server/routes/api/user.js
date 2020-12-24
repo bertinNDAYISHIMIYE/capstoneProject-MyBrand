@@ -1,4 +1,3 @@
-
 import Router from 'express';
 import { verifyToken } from '../../middleware/auth.js';
 import { usercontrollers } from '../../controllers/user.js';
