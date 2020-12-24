@@ -1,6 +1,6 @@
 
 import Joi from 'joi';
-import {base_response} from '../../helper/joiResponse.js'
+import {base_response} from '../../helper/joiResponse'
 
 export class blogValidation{
 static blogvalidation = async (req, res, next) =>{

@@ -1,5 +1,5 @@
-import { Response } from "../helper/response.js";
-import Blog from '../models/blogs.js';
+import { Response } from "../helper/response";
+import Blog from '../models/blogs';
 
 
 export class blogcomments {

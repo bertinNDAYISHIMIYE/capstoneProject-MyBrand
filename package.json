@@ -1,0 +1,68 @@
+{
+  "name": "capstoneproject-mybrand",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.com/bertinNDAYISHIMIYE/capstoneProject-MyBrand.svg?branch=develop)](https://travis-ci.com/bertinNDAYISHIMIYE/capstoneProject-MyBrand)",
+  "main": "index.js",
+  "nyc": {
+    "all": true,
+    "reporter": [
+      "text",
+      "html",
+      "teamcity"
+    ],
+    "exclude": [
+      "coverage/**/*.js",
+      "test/**/*.js",
+      "UI"
+    ]
+  },
+  "scripts": {
+    "start": "node --require @babel/polyfill build/index.js",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register 'server/**/**test.js'  --timeout 500000000 --exit",
+    "dev": "nodemon --exec babel-node server/index.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bertinNDAYISHIMIYE/capstoneProject-MyBrand.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bertinNDAYISHIMIYE/capstoneProject-MyBrand/issues"
+  },
+  "homepage": "https://github.com/bertinNDAYISHIMIYE/capstoneProject-MyBrand#readme",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/polyfill": "^7.12.1",
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.23.0",
+    "config": "^3.3.3",
+    "cors": "^2.8.5",
+    "coverage": "^0.4.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.8",
+    "multer": "^1.4.2",
+    "path": "^0.12.7",
+    "sinon": "^9.2.2",
+    "swagger-jsdoc": "^6.0.0",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.1.0",
+    "mocha": "^8.2.1",
+    "node-mocks-http": "^1.9.0",
+    "nodemon": "^2.0.6",
+    "nyc": "^15.1.0"
+  }
+}

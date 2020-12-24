@@ -1,5 +1,5 @@
 
-import { Response } from "./response.js";
+import { Response } from "./response";
 
 
 export const  base_response = (req, res, schema, next) => {

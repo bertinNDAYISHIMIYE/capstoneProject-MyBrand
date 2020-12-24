@@ -1,23 +1,20 @@
-import Router from 'express';
-import blogsRoutes from './blogs.js';
-import enquiryRoutes from './enquiryRoutes.js';
-
-
-import blogsCommentsRoutes from './blogscomments.js';
-
-import userRoutes from './user.js';
-
-
+import { Router } from "express";
+import swaggerUi from 'swagger-ui-express';
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerOptions from '../../swagger';
+import blogsRoutes from "./blogs";
+import enquiryRoutes from "./enquiryRoutes";
+import blogsCommentsRoutes from "./blogscomments";
+import userRoutes from "./user";
 
 const router = Router();
+const swaggerDoc = swaggerJsdoc(swaggerOptions);
 
-    router.use("/",enquiryRoutes);
-    router.use("/blogs", blogsRoutes);
+router.use("/", enquiryRoutes);
+router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
+router.use("/blogs", blogsRoutes);
+router.use("/blogs/comments", blogsCommentsRoutes);
+router.use("/users", userRoutes);
 
-    router.use("/blogs/comments", blogsCommentsRoutes);
-
-    
-    router.use("/users", userRoutes);
-
-    export default router;
+export default router;

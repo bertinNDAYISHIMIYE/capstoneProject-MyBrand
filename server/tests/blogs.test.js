@@ -1,7 +1,7 @@
 import mocha from "mocha";
 import chai from "chai";
 import chaihttp from "chai-http";
-import mockData from "../tests/testData.js";
+import mockData from "./mocks/testData";
 import jwt from "jsonwebtoken";
 import app from "../index.js";
 import Blog from "../models/blogs.js";
@@ -33,7 +33,7 @@ describe("Blog tests:", async () => {
         author: mockData.blogsData.author,
         content: mockData.blogsData.content,
       })
-      .attach("image", fs.readFileSync("./tests/file/tree.png"), "tress.png");
+      .attach("image", fs.readFileSync("./server/tests/mocks/file/tree.png"), "tress.png");
     // console.log("--", mockData.blogsData.title);
     response.should.have.status(201);
     response.body.should.be.a("object");
@@ -50,7 +50,7 @@ describe("Blog tests:", async () => {
         author: mockData.blogsData.author,
         content: mockData.blogsData.content,
       })
-      .attach("image", fs.readFileSync("./tests/file/tree.png"), "tree.png");
+      .attach("image", fs.readFileSync("./server/tests/mocks/file/tree.png"), "tree.png");
     response.should.have.status(401);
     response.body.should.be.a("object");
     response.body.should.have.property("error");
@@ -66,7 +66,7 @@ describe("Blog tests:", async () => {
         author: mockData.blogsData.author,
         content: mockData.blogsData.content,
       })
-      .attach("image", fs.readFileSync("./tests/file/tree.png"), "tree.png");
+      .attach("image", fs.readFileSync("./server/tests/mocks/file/tree.png"), "tree.png");
     const response = await chai.request(app).get("/api/blogs");
     //response.body.should.have.property("message");
     //response.body.should.have.property("data");
@@ -82,7 +82,7 @@ describe("Blog tests:", async () => {
         author: mockData.blogsData.author,
         content: mockData.blogsData.content,
       })
-      .attach("image", fs.readFileSync("./tests/file/tree.png"), "tree.png");
+      .attach("image", fs.readFileSync("./server/tests/mocks/file/tree.png"), "tree.png");
     // console.log("'--'", blogresponse.body.data._id);
     const response = await chai
       .request(app)
@@ -103,7 +103,7 @@ describe("Blog tests:", async () => {
         author: mockData.blogsData.author,
         content: mockData.blogsData.content,
       })
-      .attach("image", fs.readFileSync("./tests/file/tree.png"), "treet.png");
+      .attach("image", fs.readFileSync("./server/tests/mocks/file/tree.png"), "tree.png");
     const response = await chai
       .request(app)
       .get(`/api/blogs/${blogresponse.body.data._id}`);
@@ -123,7 +123,7 @@ describe("Blog tests:", async () => {
         author: mockData.blogsData.author,
         content: mockData.blogsData.content,
       })
-      .attach("image", fs.readFileSync("./tests/file/tree.png"), "treet.png");
+      .attach("image", fs.readFileSync("./server/tests/mocks/file/tree.png"), "tree.png");
     // console.log("##########", token);
     const response = await chai
       .request(app)
@@ -146,7 +146,7 @@ describe("Blog tests:", async () => {
         author: mockData.blogsData.author,
         content: mockData.blogsData.content,
       })
-      .attach("image", fs.readFileSync("./tests/file/tree.png"), "tress.png");
+      .attach("image", fs.readFileSync("./server/tests/mocks/file/tree.png"), "tree.png");
     // console.log("--", mockData.blogsData.title);
 
     const response = await chai
