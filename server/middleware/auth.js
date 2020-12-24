@@ -1,8 +1,8 @@
 
-import {JWT_KEY} from "../config/env.js"
+import {JWT_KEY} from "../config/env"
 
 import jwt from "jsonwebtoken";
-import {Response} from "../helper/response.js";
+import {Response} from "../helper/response";
 
 export class verifyToken{
 

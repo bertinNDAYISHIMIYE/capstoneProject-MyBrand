@@ -21,7 +21,6 @@ script:
   - cd server/
   - npm ci
   - npm test
-  - npm run coverage
 
 after_success:
-  - npm run coveralls
+  - npm run coverage

@@ -1,29 +1,30 @@
-import swaggerUi from "swagger-ui-express";
-import swaggerJSDocs from "swagger-jsdoc";
-const Definitions = () => ({
-  info: {
-    title: "My Brand ",
-    description: " Mr bertin website and blog portfolio ",
+import path from "path";
+import os from "os";
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: "3.0.0",
+    info: {
+      title: "My Profile",
+      version: "1.0.0",
+      description: `description`,
+      license: {},
+      contact: {},
+    },
+    components: {},
+    security: {},
+    servers: [
+      {
+        url: "http://localhost:3030",
+        name: `${os.hostname()}`,
+      },
+      {
+        url: `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`,
+        name: `${os.hostname()}`,
+      },
+    ],
   },
-  servers: [      {        url: 'https://mybrand-bertin.herokuapp.com/',      },    ],
-  schemes: ["http", "https"],
-  basePath: "/api/",
-  produces: ["application/json"],
-});
-const swaggerDocs = swaggerJSDocs({
-  swaggerDefinition: Definitions(),
-  apis: ["server/routes/api/*.js"],
-});
-const docsOption = {
-  customSiteTitle: "MY-BRAND",
+  apis: [path.resolve(__dirname, "./routes/api/*.js")],
 };
-export const setUpSwaggerUi = (app) => {
-  app.use(
-    "/api-docs",
-    swaggerUi.serve,
-    swaggerUi.serveFiles(swaggerDocs, docsOption)
-  );
-  app.get("/api-docs", (req, res) => {
-    return res.send(swaggerUi.generateHTML(swaggerDocs, docsOption));
-  });
-};
+
+export default swaggerOptions;

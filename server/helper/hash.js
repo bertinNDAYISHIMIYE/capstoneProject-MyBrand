@@ -1,10 +1,12 @@
-
-import bcrypt from 'bcryptjs';
+import bcrypt from "bcryptjs";
 
 export const hashPassword = async (password) => {
+try {
     const salt = await bcrypt.genSalt(8);
-    
-    const hashPassword = await bcrypt.hash(password, salt);
-    
-    return hashPassword;
+  const hashPassword = await bcrypt.hash(password, salt);
+  return hashPassword;  
+} catch (error) {
+    return null
+}
+
 };

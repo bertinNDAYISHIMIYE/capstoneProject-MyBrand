@@ -1,4 +1,4 @@
-import enquiries from "../models/enquiriesModal.js";
+import enquiries from "../models/enquiriesModal";
 
 export class enquiriescontrollers {
 
