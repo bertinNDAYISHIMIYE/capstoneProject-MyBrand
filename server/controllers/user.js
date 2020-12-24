@@ -1,5 +1,5 @@
-import Users from '../models/users.js';
-import { hashPassword } from '../helper/hash.js';
+import Users from '../models/users';
+import { hashPassword } from '../helper/hash';
 import jwt from 'jsonwebtoken';
 
 

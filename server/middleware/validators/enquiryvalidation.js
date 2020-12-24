@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import {base_response} from '../../helper/joiResponse.js'
+import {base_response} from '../../helper/joiResponse'
 
 export class enquiryValidation{
 static enquiryvalidation = async (req, res, next) =>{
